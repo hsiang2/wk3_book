@@ -1,0 +1,23 @@
+{
+    "title": "Newest",
+    "list": [
+        {
+        "image": "https://compai.pub/v1/png/9e57bef6daaf12f948fd90dfb3a52e1a67723bf59f9bb9d18c8af511a943699b",
+        "star": 4,
+        "title": "Yves Saint Laurent",
+        "author": "Suzy Menkes"
+        },
+        {
+        "image": "https://compai.pub/v1/png/067918e6dd8d35014e58e47a0e7f4c46b4f913b2e1dd1dc866c8525ad1423680",
+        "star": 3,
+        "title": "The Book of Signs",
+        "author": "Rudolf Koch"
+        },
+        {
+        "image": "https://compai.pub/v1/png/df1e59373a856f14d6c11f752b2750c38d78972a9ce43469bec44570b901ac55",
+        "star": 3,
+        "title": "Stitched Up",
+        "author": "Tansy E. Hoskins"
+        }
+    ]
+}

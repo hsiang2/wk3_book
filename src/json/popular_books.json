@@ -1,0 +1,20 @@
+{
+    "title": "Popular Books",
+    "list": [
+        {
+        "image": "https://compai.pub/v1/png/ba7ada8a2a6af34c6b35b6d1923c2856a54dbde8e6cda7947dba43df261f1f65",
+        "title": "Fashinopolis",
+        "author": "Dana Thomas"
+        },
+        {
+        "image": "https://compai.pub/v1/png/df76e0b5188c58ba61b6d169de607580ccae9e08a0c70a2915f0c72b33339651",
+        "title": "Chanel",
+        "author": "Patrick Mauriès"
+        },
+        {
+        "image": "https://compai.pub/v1/png/9fe7cf0c50459a4f71cb8772a5e4566167a067d4a40e00f2bca5d497f4547ee9",
+        "title": "Calligraphy",
+        "author": "June & Lucy"
+        }
+    ]
+}
