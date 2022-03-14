@@ -1,23 +1,34 @@
-// import React from "react";
-// import { Image } from "react-native-web";
+import React from "react";
+import { StyleSheet, Image, View } from "react-native";
 
-// const Star = (star) => {
-//     const starlist = [];
-//     for(let i = 0; i < star; i++){
-//       starlist.push(
-//         <Image
-//           style={style.imageStyle}
-//           source={require('../images/icon_star_empty.png')}
-//       />)
-//     }
-//     for(let i = 5; i > star; i--){
-//       starlist.push(
-//         <Image
-//           style={style.imageStyle}
-//           source={require('../images/icon_star_empty.png')}
-//       />)
-//     }
-//     return starlist;
-//   }
+const printStar = (star) => {
+      const starlist = [];
+      for(let i = 0; i < star; i++){
+        starlist.push(
+          <Image
+            //style={style.imageStyle}
+            source={require('../../assets/icon_star_filled.png')}
+        />)
+      }
+      for(let i = 5; i > star; i--){
+        starlist.push(
+          <Image
+            //style={style.imageStyle}
+            source={require('../../assets/icon_star_empty.png')}
+        />)
+      }
+      return (
+        <View style={styles.starStyle}>
+          {starlist}
+        </View>
+        );
+    }
 
-//   export default Star;
+const styles = StyleSheet.create({
+  starStyle: {
+    flexDirection: "row"
+  }
+});
+
+
+  export default printStar;
