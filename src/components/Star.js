@@ -6,14 +6,14 @@ const printStar = (star) => {
       for(let i = 0; i < star; i++){
         starlist.push(
           <Image
-            //style={style.imageStyle}
+            style={styles.imageStyle}
             source={require('../../assets/icon_star_filled.png')}
         />)
       }
       for(let i = 5; i > star; i--){
         starlist.push(
           <Image
-            //style={style.imageStyle}
+            style={styles.imageStyle}
             source={require('../../assets/icon_star_empty.png')}
         />)
       }
@@ -25,8 +25,12 @@ const printStar = (star) => {
     }
 
 const styles = StyleSheet.create({
+  imageStyle: {
+    marginRight: 4
+  },
   starStyle: {
-    flexDirection: "row"
+    flexDirection: "row",
+    marginTop: 8
   }
 });
 

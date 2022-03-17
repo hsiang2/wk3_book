@@ -27,7 +27,7 @@ import printStar from "./Star";
 
 const BookDetail = ({book, navigation}) => {
   return(
-    <View>
+    <View style={styles.containerStyle}>
       <Pressable
         onPress={() => navigation.navigate('Detail', book)}
       >
@@ -37,21 +37,32 @@ const BookDetail = ({book, navigation}) => {
         />
       </Pressable>
       {book.star ? (
-        //<Star star={book.star}/>
         printStar(book.star)
-        // <View style={style.starStyle}>
-        //   <Star star={book.star}/>
-        // </View>
       ) : null}
-      <Text>{book.title}</Text>
-      <Text>{book.author}</Text>
+      <Text style={styles.titleStyle}>{book.title}</Text>
+      <Text style={styles.subtitleStyle}>{book.author}</Text>
     </View>
 )};
 
 const styles = StyleSheet.create({
+  containerStyle: {
+    marginRight: 16
+    //backgroundColor: "#fff"
+  },
   imageStyle: {
     height: 200,
-    width: 140
+    width: 140,
+    marginBottom: 8
+  },
+  titleStyle: {
+    color: "#131313",
+    fontSize: 16,
+    marginVertical: 8
+  },
+  subtitleStyle: {
+    color: "#666666",
+    fontSize: 12,
+    marginBottom: 8
   }
 });
 

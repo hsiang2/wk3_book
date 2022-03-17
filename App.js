@@ -2,24 +2,58 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Image } from 'react-native';
+import { Image, Pressable } from 'react-native';
 
 import HomeScreen from './src/screens/HomeScreen';
 import DetailScreen from './src/screens/DetailScreen';
+import BookMark from './src/components/BookMark';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const BookStack = () => {
   return(
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        title: null,
+        headerShadowVisible: false
+      }}
+    >
       <Stack.Screen
         name='Home' 
         component={HomeScreen}
+        options={{
+          headerLeft: () => (
+            <Image 
+              source={require("./assets/icon_menu.png")}
+            />
+          ),
+          headerRight: () => (
+            <Image 
+              source={require("./assets/icon_search.png")}
+            />
+          )
+        }}
       />
       <Stack.Screen 
         name='Detail'
         component={DetailScreen}
+        options={({navigation}) => ({
+          headerBackTitleVisible: false,
+          headerLeft: () => (
+            <Pressable
+              onPress= {() => (navigation.goBack())}
+            >
+              <Image 
+              source={require("./assets/icon_back.png")}
+              />
+            </Pressable>
+          ),
+          headerRight: () => (
+            <BookMark />
+          )
+          //headerBackImageSource: "./assets/icon_back.png"
+        })}
       />
     </Stack.Navigator>
   );
@@ -52,7 +86,7 @@ const App = () => {
               />
             );
           },
-          headerShown: false
+          headerShown: false,
         })}
         tabBarOptions={{
           activeTintColor: '#6200EE',
