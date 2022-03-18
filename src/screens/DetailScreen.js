@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, ScrollView, Text, Image, View, Pressable } from "react-native";
+import { ScrollView, Image, Text, Center, HStack, Pressable } from "native-base";
 import printStar from "../components/Star";
 
 const DetailScreen = ({route}) => {
@@ -11,88 +11,32 @@ const DetailScreen = ({route}) => {
             price
           } = route.params;
     return(
-        <ScrollView style={styles.backgroundStyle}>
-          <View style={styles.containerStyle}>
-            <Image 
-              style={styles.imageStyle}
-              source={{uri: image}}
-            />
-            <Text style={styles.titleStyle}>{title}</Text>
-            <Text style={styles.subtitleStyle}>{author}</Text>
-            <View style={styles.ratingStarStyle}>
+        <ScrollView bgColor="white">
+          <Center>
+            <Image h={300} w={210} mt={2} source={{uri: image}}/>
+            <Text color="#131313" fontSize="24" mt="28" mb="2">{title}</Text>
+            <Text color="#666666" fontSize="14">{author}</Text>
+            {star ? (
+              <HStack>
               {printStar(star)}
-              <Text style={styles.numberStyle}>{star + ".0"}</Text>
-              <Text style={styles.totalNumberStyle}> / 5.0</Text>
-            </View>
-            <Text style={styles.descriptionStyle}>{description}</Text>
-            <Pressable style={styles.buttonStyle}>
-              <Text style={styles.buttonTextStyle}>{`BUY NOW FOR $${price}`}</Text>
-            </Pressable>
-          </View>
+              <Text ml={2} mt={2} color="#131313" fontSize={14}>{star + ".0"}</Text>
+              <Text color="#666666" fontSize={14} mt={2}> / 5.0</Text>
+              </HStack>
+            ) : null
+            }
+            {description ? (
+              <>
+                <Text mt={4} mb={7} mx={5} fontSize={14} color="#131313" lineHeight={24} textAlign="center">
+                  {description}
+                </Text>
+                <Pressable bgColor="#6200EE" w={190} h={36} borderRadius={4} flex={1} alignItems="center" justifyContent="center">
+                  <Text fontSize={14} color="#fff">{`BUY NOW FOR $${price}`}</Text>
+                </Pressable>
+              </>
+            ) : null
+            }
+          </Center>
         </ScrollView>
 )};
-
-const styles = StyleSheet.create({
-    imageStyle: {
-      height: 300,
-      width: 210,
-      marginTop: 8
-    },
-    backgroundStyle: {
-      backgroundColor: "#fff",
-    },
-    containerStyle: {
-      flex: 1,
-      alignItems: "center"
-    },
-    titleStyle: {
-      color: "#131313",
-      fontSize: 24,
-      marginTop: 28,
-      marginBottom: 8
-    },
-    subtitleStyle: {
-      color: "#666666",
-      fontSize: 14
-    },
-    ratingStarStyle: {
-      flex: 1,
-      flexDirection: 'row'
-    },
-    numberStyle: {
-      marginLeft: 8,
-      marginTop: 8,
-      color: "#131313",
-      fontSize: 14
-    },
-    totalNumberStyle: {
-      color: "#666666",
-      marginTop: 8,
-      fontSize: 14
-    },
-    descriptionStyle: {
-      marginTop: 16,
-      marginBottom: 28,
-      marginHorizontal: 20,
-      fontSize: 14,
-      color: "#131313",
-      lineHeight: 24,
-      textAlign: 'center',
-    },
-    buttonStyle: {
-      backgroundColor:'#6200EE',
-      width: 190,
-      height: 36,
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      borderRadius: 4
-    },
-    buttonTextStyle: {
-      fontSize: 14,
-      color: "#fff"
-    }
-  });
   
-
 export default DetailScreen;

@@ -1,12 +1,12 @@
 import React from "react";
-import { StyleSheet, ScrollView } from "react-native";
+import { ScrollView } from "native-base";
 import Booklist from "../components/BookList";
 import popularBooksData from "../json/popular_books.json";
 import newestData from "../json/newest"
 
 const HomeScreen = ({navigation}) => {
     return (
-        <ScrollView style={styles.containerStyle}>
+        <ScrollView bgColor="white">
             <Booklist 
                 data={popularBooksData}
                 navigation={navigation}
@@ -18,11 +18,5 @@ const HomeScreen = ({navigation}) => {
         </ScrollView>
     );
 };
-
-const styles = StyleSheet.create({
-    containerStyle: {
-        backgroundColor: "#fff",
-    }
-});
 
 export default HomeScreen;

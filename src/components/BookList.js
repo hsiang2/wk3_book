@@ -1,14 +1,14 @@
-import react from "react";
+import React from "react";
 import BookDetail from "./BookDetail";
-import { StyleSheet, Text, FlatList } from "react-native";
+import { Text, FlatList } from "native-base";
 
 const Booklist = ({data, navigation}) => {
     const renderItem = ({item}) => (<BookDetail book={item} navigation={navigation}/>)
     return(
         <>
-            <Text style={styles.titleStyle}>{data.title}</Text>
-            <FlatList 
-              style={styles.listStyle}
+            <Text color="#131313" fontSize={24} mt={2} mb={4} ml={5}>{data.title}</Text>
+            <FlatList
+              contentContainerStyle={{paddingRight: 4, paddingLeft: 20}}
               horizontal={true}
               data={data.list}
               renderItem={renderItem}
@@ -17,40 +17,6 @@ const Booklist = ({data, navigation}) => {
             />
         </>
     );
-    // const renderSectionHeader = ({section}) => (
-    //     <>
-    //     <Text>{section.title}</Text>
-    //     <FlatList 
-    //       horizontal={true}
-    //       data={section.data}
-    //       renderItem={({item})=> <BookDetail book={item} />}
-    //     />
-    //     </>
-    // );
-    // const renderItem = ({item}) => (
-        
-    // );
-    // return(
-    //   <SectionList 
-    //     sections={sections}
-    //     renderSectionHeader={renderSectionHeader}
-    //     renderItem={}
-    //   />
-    // );
 };
-
-const styles = StyleSheet.create({
-    titleStyle: {
-        color: "#131313",
-        fontSize: 24,
-        marginTop: 8,
-        marginBottom: 16,
-        marginLeft: 20
-    },
-    listStyle: {
-        paddingLeft: 20,
-        paddingRight: 4
-    }
-});
 
 export default Booklist;

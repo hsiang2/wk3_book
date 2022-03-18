@@ -1,38 +1,27 @@
 import React from "react";
-import { StyleSheet, Image, View } from "react-native";
+import { Image, HStack } from "native-base";
 
 const printStar = (star) => {
       const starlist = [];
       for(let i = 0; i < star; i++){
         starlist.push(
           <Image
-            style={styles.imageStyle}
+            mr={1}
             source={require('../../assets/icon_star_filled.png')}
         />)
       }
       for(let i = 5; i > star; i--){
         starlist.push(
           <Image
-            style={styles.imageStyle}
+            mr={1}
             source={require('../../assets/icon_star_empty.png')}
         />)
       }
       return (
-        <View style={styles.starStyle}>
+        <HStack mt={2} alignItems="center">
           {starlist}
-        </View>
+        </HStack>
         );
     }
-
-const styles = StyleSheet.create({
-  imageStyle: {
-    marginRight: 4
-  },
-  starStyle: {
-    flexDirection: "row",
-    marginTop: 8
-  }
-});
-
 
   export default printStar;
