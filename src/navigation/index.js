@@ -6,6 +6,7 @@ import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from '
 import { Divider, Image, Pressable, Text, VStack } from 'native-base';
 import HomeScreen from '../screens/HomeScreen';
 import DetailScreen from '../screens/DetailScreen';
+import BookMark from '../components/BookMark';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -186,12 +187,9 @@ const BookStack = ({navigation}) => {
                 />
               </Pressable>
             ),
-            // headerRight: () => (
-
-            // )
-            //   //<BookMark />
-            // )
-            //headerBackImageSource: "./assets/icon_back.png"
+            headerRight: () => (
+                <BookMark />
+            )
           })}
         />
       </Stack.Navigator>
