@@ -6,7 +6,10 @@ import newestData from "../json/newest"
 
 const HomeScreen = ({navigation}) => {
     return (
-        <ScrollView bgColor="white">
+        <ScrollView 
+          bgColor="white"
+          contentContainerStyle={{paddingBottom: 60}}
+          >
             <Booklist 
                 data={popularBooksData}
                 navigation={navigation}
