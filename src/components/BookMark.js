@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Pressable, Image, Text} from "native-base"
+import {Pressable, Image} from "native-base"
 
 const BookMark = () => {
     const [isPressed, setIsPressed] = useState(false);
