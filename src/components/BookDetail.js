@@ -11,6 +11,7 @@ const BookDetail = ({book, navigation}) => {
         <Image 
           h={200} w={140} mb={2}
           source={{uri: book.image}}
+          alt="book"
         />
       </Pressable>
       {book.star ? (

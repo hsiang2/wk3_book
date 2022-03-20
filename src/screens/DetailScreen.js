@@ -13,7 +13,7 @@ const DetailScreen = ({route}) => {
     return(
         <ScrollView bgColor="white">
           <Center>
-            <Image h={300} w={210} mt={2} source={{uri: image}}/>
+            <Image h={300} w={210} mt={2} source={{uri: image}} alt="book"/>
             <Text color="#131313" fontSize="24" mt="28" mb="2">{title}</Text>
             <Text color="#666666" fontSize="14">{author}</Text>
             {star ? (

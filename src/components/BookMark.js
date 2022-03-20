@@ -8,7 +8,8 @@ const BookMark = () => {
     return(
         <Pressable onPress={() => setIsPressed(isPressed? false:true)}>
             <Image w={6} h={6}
-              source={{uri: isPressed? imgActived : img}}/>
+              source={{uri: isPressed? imgActived : img}}
+              alt='bookmark'/>
         </Pressable>
     )
 }

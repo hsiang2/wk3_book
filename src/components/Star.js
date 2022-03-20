@@ -8,6 +8,7 @@ const printStar = (star) => {
           <Image
             mr={1}
             source={require('../../assets/icon_star_filled.png')}
+            alt="filled star"
         />)
       }
       for(let i = 5; i > star; i--){
@@ -15,6 +16,7 @@ const printStar = (star) => {
           <Image
             mr={1}
             source={require('../../assets/icon_star_empty.png')}
+            alt="empty star"
         />)
       }
       return (
